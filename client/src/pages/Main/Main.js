@@ -19,10 +19,15 @@ const Main = () => {
       .catch(err => console.log(err));
   },[])
   
+  const updateCart = (item, quantity) => {
+    console.log(item, quantity);
+    
+  }
+
   return (
     <div className="Main">
-      <Basket fruitData={fruitData} />
-      <Cart />
+      <Basket fruitData={fruitData} updateCart={updateCart}/>
+      <Cart fruitData={fruitData} updateCart={updateCart}/>
     </div>
   );
 }

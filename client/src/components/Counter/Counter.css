@@ -1,0 +1,20 @@
+.Counter {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.Counter__amount {
+  padding: 10px;
+}
+
+.Counter__buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.Counter__counter-container {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}

@@ -4,14 +4,17 @@ import './Fruit.css'
 
 import Counter from '../Counter/Counter';
 
-const Fruit = ( { fruit }) => {
+const Fruit = ( { fruit, updateCart }) => {
   return (
     <div className="Fruit">
-      <h1>I'm the Fruit Component</h1>
-      <img src={fruit.url} alt={fruit.title}/>
-      <Counter />
-      <p>{fruit.title}</p>
-      <p>{fruit.price}</p>
+      <img className="Fruit__img" src={fruit.url} alt={fruit.title}/>
+      <div className="Fruit__counter-container">
+        <Counter fruit={fruit.title} updateCart={updateCart}/>
+        <div>
+          <p>{fruit.title}</p>
+          <p>{`$${fruit.price.toFixed(2)}`}</p>
+        </div>
+      </div>
       <p>{fruit.description}</p>
     </div>
   );
