@@ -4,16 +4,16 @@ import './Basket.css'
 
 import Fruit from '../Fruit/Fruit';
 
-const Basket = () => {
+const Basket = ( { fruitData }) => {
   return (
     <div>
       <h1>I'm the BASKET Component</h1>
       <div className="Basket">
-        <Fruit />
-        <Fruit />
-        <Fruit />
-        <Fruit />
-        <Fruit />
+        { fruitData &&
+          fruitData.map(fruit => {
+            return <Fruit fruit={fruit} />
+          })
+        }
       </div>
     </div>
     
