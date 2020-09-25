@@ -9,7 +9,7 @@ const Fruit = ( { fruit, updateCart }) => {
     <div className="Fruit">
       <img className="Fruit__img" src={fruit.url} alt={fruit.title}/>
       <div className="Fruit__counter-container">
-        <Counter fruit={fruit.title} updateCart={updateCart}/>
+        <Counter fruit={fruit.title} qty={fruit.quantity} updateCart={updateCart}/>
         <div>
           <p>{fruit.title}</p>
           <p>{`$${fruit.price.toFixed(2)}`}</p>

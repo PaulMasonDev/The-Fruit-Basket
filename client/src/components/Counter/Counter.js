@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import './Counter.css'
 
-const Counter = ( { fruit, updateCart }) => {
+const Counter = ( { fruit, updateCart, qty }) => {
   const [clicked, setClicked] = useState(false);
   const [quantity, setQuantity] = useState(0);
   
@@ -35,7 +35,7 @@ const Counter = ( { fruit, updateCart }) => {
         :
         <div className="Counter__counter-container">
           <div className="Counter__amount">
-            <p>{quantity}</p>
+            <p>{qty}</p>
           </div>
           <div className="Counter__buttons">
             <button onClick={increase}>+</button>

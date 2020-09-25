@@ -1,3 +1,9 @@
 .Cart {
   text-align: center;
 }
+
+.Cart__checkout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}

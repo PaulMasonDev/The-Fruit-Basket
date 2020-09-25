@@ -9,9 +9,11 @@ const CartItem = ( { fruit, updateCart }) => {
     <div className="CartItem">
       <img className="CartItem__img" src={fruit.url} />
       <div className="CartItem__counter-container">
-        <Counter updateCart={updateCart} />
-        <p>{fruit.title}</p>
-        <p>{(fruit.qty * fruit.price).toFixed(2)}</p>
+        <Counter fruit={fruit.title} qty={fruit.quantity} updateCart={updateCart} />
+        <div>
+          <p>{fruit.title}</p>
+          <p>{`$${(fruit.quantity * fruit.price).toFixed(2)}`}</p>
+        </div>
       </div>
     </div>
   );
