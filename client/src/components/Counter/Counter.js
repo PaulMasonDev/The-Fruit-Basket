@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react'
 
 import './Counter.css'
 
-const Counter = ( { fruit, updateCart, qty }) => {
+const Counter = ( { fruit, items, type, updateCart, qty }) => {
   const [clicked, setClicked] = useState(false);
   const [quantity, setQuantity] = useState(0);
-  
+  const [style, setStyle] = useState('');
   const initialize = () => {
     setClicked(true);
     setQuantity(quantity + 1);
@@ -15,14 +15,25 @@ const Counter = ( { fruit, updateCart, qty }) => {
     updateCart(fruit, quantity);
   }, [quantity])
 
+  // useEffect(()=> {
+  //   if(type === "cart-item") {
+  //     setStyle("invisible");
+  //   }
+  // }, [])
+
   const increase = () => {
-    setQuantity(quantity + 1);
-    updateCart(fruit, quantity);
+    if(items < 10) {
+      setQuantity(quantity + 1);
+      updateCart(fruit, quantity);
+    }
+    
   }
 
   const decrease = () => {
-    setQuantity(quantity - 1);
-    updateCart(fruit, quantity);
+    if(quantity >= 1) {
+      setQuantity(quantity - 1);
+      updateCart(fruit, quantity);
+    }
   }
 
   return (
@@ -30,7 +41,7 @@ const Counter = ( { fruit, updateCart, qty }) => {
       {
         !clicked ?  
         <div className="Counter__add" onClick={initialize}>
-          <button>+</button>
+          <button className={style}>+</button>
         </div>
         :
         <div className="Counter__counter-container">

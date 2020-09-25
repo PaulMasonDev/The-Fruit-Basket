@@ -18,3 +18,11 @@
   align-items: center;
   margin-right: 20px;
 }
+
+.invisible {
+  display: none;
+}
+
+.visible {
+  display: inline-block;
+}

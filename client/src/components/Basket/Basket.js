@@ -4,13 +4,13 @@ import './Basket.css'
 
 import Fruit from '../Fruit/Fruit';
 
-const Basket = ( { fruitData, updateCart }) => {
+const Basket = ( { fruitData, items, updateCart }) => {
   return (
     <div>
       <div className="Basket">
         { fruitData &&
           fruitData.map(fruit => {
-            return <Fruit key={fruit.id} fruit={fruit} updateCart={updateCart} />
+            return <Fruit key={fruit.id} fruit={fruit} items={items} updateCart={updateCart} />
           })
         }
       </div>
